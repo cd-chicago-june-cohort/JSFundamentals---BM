@@ -15,52 +15,56 @@
            </div>
         </div>
     <script>
-        // Basic 1
-        // var x = []
-        // console.log(x)
-        // x.push('coding', 'dojo', 'rocks')
-        // console.log(x)
-        // x.pop(2)
-        // console.log(x)
 
-        // Basic 2
-        // const y = []
-        // console.log (y)
-        // y.push(88)
-        // console.log(y)
+    function magic_multiply(x,y) {
+    
+        if (Array.isArray(x)) {
+            for (var i = 0; i < x.length; i++) {
+                x[i] = (x[i]*y);
+            }
+            return x;
 
-        // Basic 3
-        // var z = [9,10,6,5,-1,20,13,2]
-        // for (var i = 0; i < z.length-1; i++) {
-        //     console.log(z[i])
-        // }
+        } else if (typeof y == 'string') {
+            
+            return 'Error: Can not multiply by string';
+
+        } else if (typeof x == 'string') {
+            var result="";
+            for (i = 1; i <= y; i++) {
+                result=result+x;
+            }
+            return result
+
+        } else {
+
+        return x*y
         
-        // Basic 4
-        // var names = ['Kadie', 'Joe', 'Fritz', 'Pierre', 'Alphonso']
-        
-        // for (var i = 0; i < names.length; i++) {
-        //     console.log(names[i].length)
-
-        // }
-
-        // for (var i = 0; i < names.length; i++) {
-        //     if (names[i].length == 5) {
-        //     console.log(names[i])
-        //     }
-
-        // }
-
-        // Basic 5
-        function yell(string) {
-            console.log(string.toUpperCase())
         }
+    }
 
-        yell('hamburger')
+    // test1 - should return 10
+    let test1 = magic_multiply(5,2);
+    console.log('test1');
+    console.log(test1)
 
+    // test2 - should return 0
+    let test2 = magic_multiply(0,0);
+    console.log('test2');
+    console.log(test2)
 
+    // test3 - should return 2,4,6
+    let test3 = magic_multiply([1,2,3],2);
+    console.log('test3');
+    console.log(test3)
 
+    // test4 - should return "error: can not multiply by string"
+    let test4 = magic_multiply(7, "three");
+    console.log('test4');
+    console.log(test4);
 
-
+    let test5 = magic_multiply("MixMatch", 4);
+    console.log('test5');
+    console.log(test5);
 
     </script>
 </body>
