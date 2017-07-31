@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name='viewport' content="width=device-width initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="jumbotron">
+                    <h1 class="header">JS Math</h1>
+                </div>
+           </div>
+       </div>
+
+<script>
+
+function zero_negativity(arr) {
+    
+    for (var i = 0; i < arr.length; i++) {
+        if (arr[i] < 0) {
+            return false
+        }
+    }
+    return true
+}
+arr=[2,3,5, -10]
+console.log('Math 1 - You negative?')
+console.log(zero_negativity(arr))
+// --------------------------------------
+function is_even(num) {
+
+    if (num % 2 === 0) {
+        return true
+    }
+    return false
+}
+
+console.log('Math 2 - Can you even?')
+console.log(is_even(9))
+// --------------------------------------
+
+function how_many_even(arr) {
+    evens = 0
+    for (var i = 0; i < arr.length; i++) {
+        if (is_even(arr[i])) {
+            evens = evens + 1;
+        }
+    }
+    return evens
+}
+arr = [1,2,3,4,5,6,7,8]
+console.log('Math 3 - How many evens?')
+console.log(how_many_even(arr))
+// --------------------------------------
+
+function create_dummy_array(n) {
+    arr = []
+    for (var i = 1; i <= n; i++) {
+    arr.push(Math.floor((Math.random() * 9) + 1));
+    }
+    return arr
+}
+
+
+create_dummy_array(6)
+console.log('Math 4 - Look at that array!')
+console.log(arr)
+
+// --------------------------------------
+
+function random_choice(arr) {
+    l = arr.length-1
+    r = Math.floor((Math.random() * l) +1);
+    console.log(r)
+       
+    return arr[r]
+}
+
+arr = [1,2,3,4,5,6]
+
+console.log('Math 5 - Random number in array')
+console.log(random_choice(arr))
+
+</script>
+
+
+</body>
+</html>
