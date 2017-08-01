@@ -16,22 +16,22 @@
        </div>
 <script>
 
-let students = [
-    {name: 'Remy', cohort: 'Jan'},
-    {name: 'Genevieve', cohort: 'March'},
-    {name: 'Chuck', cohort: 'Jan'},
-    {name: 'Osmund', cohort: 'June'},
-    {name: 'Nikki', cohort: 'June'},
-    {name: 'Boris', cohort: 'June'}
-];
+// let students = [
+//     {name: 'Remy', cohort: 'Jan'},
+//     {name: 'Genevieve', cohort: 'March'},
+//     {name: 'Chuck', cohort: 'Jan'},
+//     {name: 'Osmund', cohort: 'June'},
+//     {name: 'Nikki', cohort: 'June'},
+//     {name: 'Boris', cohort: 'June'}
+// ];
 
-function printName(arr) {
-    for (var i = 0; i < arr.length; i++) {
-        console.log('name: ' + students[i].name, ', cohort: ' + students[i].cohort)
-    }
-}
+// function printName(arr) {
+//     for (var i = 0; i < arr.length; i++) {
+//         console.log('name: ' + students[i].name, ', cohort: ' + students[i].cohort)
+//     }
+// }
 
-printName(students)
+// printName(students)
 // ---------------------------------------
 
 let users = {
@@ -50,14 +50,14 @@ let users = {
 function printStaff(arr) {
     
     for (let info in users) {
-        if (info = 'employees') {
+        if (info == 'employees') {
             console.log('EMPLOYEES')
             for (var q = 0; q < users[info].length; q++) {
             console.log((q+1) + ' - ' + arr[info][q].last_name + ', ' + arr[info][q].first_name + ' - ' + (arr[info][q].last_name + arr[info][q].first_name).length);
             }
         } 
     
-        if (info = 'managers') {
+        if (info == 'managers') {
             console.log('MANAGERS')
             for (var q = 0; q < users[info].length; q++) {
             console.log((q+1) + ' - ' + arr[info][q].last_name + ', ' + arr[info][q].first_name + ' - ' + (arr[info][q].last_name + arr[info][q].first_name).length);
