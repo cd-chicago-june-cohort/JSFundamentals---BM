@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>jsdom2</title>
+    <meta name='viewport' content="width=device-width initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+	<style>
+
+	td{
+		border: 1px solid silver;
+		text-align: center;
+		width: 40px;
+		height: 40px;
+	}    
+
+	td:first-child, tr:first-child{
+		background-color: silver;
+		font-weight: bold;
+	}
+
+	</style>
+
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="jumbotron">
+                    <h1 class="header">JavaScript Dom dot Com</h1>
+                </div>
+           </div>
+	   	</div>
+		<div class="row">
+			<div class="col-md-12">
+			    <div id="target">
+
+				</div>
+			</div>
+		</div>
+    </div>
+</body>
+
+<script type="text/javascript">
+
+	// define draw table
+	function draw_table(){
+	// create our html string, open up the table tag
+		let html_string = "<table>";
+		// outer loop
+		for(let i = 0; i<13; i++){
+			var nums;
+			// create a row for each iteration of the outer loop
+			html_string += "<tr>";
+			// inner loop
+			for(let j = 0; j<13; j++){
+				
+				if (i==0) {
+					nums = j;
+				} else {
+					if (j==0) {
+						nums = i;
+					} else {
+						nums = i * j;
+					}
+				}
+				// attach our table data tags around the number
+				let data = "<td>" + nums + "</td>";
+				// add it to the html
+				html_string += data;
+			}
+			// after the inner loop, we cap our table rows
+			html_string += "</tr>";
+		}
+		// after the outer loop, we cap our entire table
+		html_string += "</table>";
+		document.getElementById("target").innerHTML = html_string;
+		console.log(html_string)
+	}
+	draw_table();
+
+
+</script>
+</html>
