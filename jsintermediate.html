@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name='viewport' content="width=device-width initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="jumbotron">
+                    <h1 class="header">Hello World.</h1>
+                </div>
+           </div>
+       </div>
+        
+<script>
+
+function star_string(n) {
+    stars = '*'
+    for (var i = 1; i <= n; i++) {
+        stars += '*'
+    }
+    return stars
+}
+
+console.log(star_string(4))
+
+
+
+function draw_stars(arr){
+    let star = '*';
+    for(var k=0;k<arr.length;k++){
+    console.log(star.repeat(arr[k]));
+    }
+}
+
+let q = [2,4,6,8,10]
+draw_stars(q);
+
+function draw_stars(arr){
+    let star = '*';
+    for(var k=0;k<arr.length;k++){
+        if(typeof arr[k] === 'string'){
+            for(var i=0;i<arr[k].length;i++){
+                console.log((arr[k][i]).repeat(arr[k].length).toLowerCase());
+                break;
+            }
+        }
+        else{
+            console.log(star.repeat(arr[k]));
+        }
+    }
+}
+
+
+let x = [4, "Tom", 1, "Michael", 5, 7, "Jimmy Smith"]
+draw_stars(x);
+
+
+
+</script>
+
+
+
+
+
+</body>
+</html>
