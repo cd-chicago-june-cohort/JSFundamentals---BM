@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name='viewport' content="width=device-width initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="jumbotron">
+                    <h1 class="header">JS Dom</h1>
+                </div>
+           </div>
+       </div>
+        <div class=col-md-12>
+            <h1>Students</h1>
+            <ul id="main">
+        
+            </ul>
+        </div>
+<script>        
+    
+    function appendList(array, id){
+    for(var i = 0; i < array.length; i++){
+        let newStudent = document.createElement("li");
+            newStudent.innerHTML = array[i];
+            document.getElementById(id).appendChild(newStudent);
+        }    
+    };
+    
+    let students = ["Jeff", "Jenny", "Javier", "Joslyn", "Joe", "Jane", "Django"];
+    let target_id = "main";
+
+    appendList(students, target_id);
+
+    function superAppend(array, element, id){
+    for(var i = 0; i < array.length; i++){
+        let newStudent = document.createElement(element);
+            newStudent.innerHTML = array[i];
+            document.getElementById(id).appendChild(newStudent);
+        }
+    };
+
+
+</script>       
+
+
+
+</body>
+</html>
