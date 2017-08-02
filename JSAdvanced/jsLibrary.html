@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name='viewport' content="width=device-width initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="jumbotron">
+                    <h1 class="header">JS Library</h1>
+                </div>
+           </div>
+       </div>
+<script>
+
+var __ = {
+    map: function(arr, callback) {
+        for (var i = 0; i < arr.length; i++) {
+            arr[i] = callback(arr[i]);
+        }  return arr;
+    },
+    reduce: function(arr, callback, memo) { 
+        for (var i = 0; i < arr.length; i++){
+            memo = callback(memo, arr[i]);
+        }   return memo;
+    },
+    
+    find: function(arr, callback) {   
+        for (var i = 0; i < arr.length; i++) {
+            if (callback(arr[i])) {
+                return arr[i];
+            }
+        }
+    },
+
+    filter: function(arr, callback) { 
+        var tempArray = [];
+        for (var i = 0; i < arr.length; i++) {
+            if (callback(arr[i])) {
+                tempArray.push(arr[i]);
+            }
+        } return tempArray;
+    },
+
+    reject: function() {
+        var tempArray = [];
+        for (var i = 0; i < arr.length; i++) {
+            if (!callback(arr[i])) {
+                tempArray.push(array[i]);
+            }
+        } return tempArray;
+    },
+}
+
+
+// MAP method test
+var cb = function(x) {
+    return x * x;
+}
+var arr = [1,2,3,4];
+var x = __.map(arr, cb)
+console.log(x);
+
+
+
+
+</script>
+
+
+</body>
+</html>
+

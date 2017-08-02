@@ -16,42 +16,110 @@
        </div>
 
 <script>
-    function Person(name, age){
-    // create a private variable that stores a reference to the new object we create
-    var self = this;
-    var privateVariable = "This variable is private";
-    var privateMethod = function(){
-        console.log("this is a private method for " + self.name);
-        console.log(self);
-    }
-    this.name = name;
-    this.age = age;
-    this.greet = function(){
-        console.log("Hello my name is " + this.name + " and I am " + this.age + " years old!");
-        // we can access our attributes within the constructor!
-        console.log("Also my privateVariable says: " + privateVariable)
-        // we can access our methods within the constructor!
-        privateMethod();
-    }
-}
-var joe = new Person("Joe", 23);
-joe.greet();
+//     function Person(name, age){
+//     // create a private variable that stores a reference to the new object we create
+//     var self = this;
+//     var privateVariable = "This variable is private";
+//     var privateMethod = function(){
+//         console.log("this is a private method for " + self.name);
+//         console.log(self);
+//     }
+//     this.name = name;
+//     this.age = age;
+//     this.greet = function(){
+//         console.log("Hello my name is " + this.name + " and I am " + this.age + " years old!");
+//         // we can access our attributes within the constructor!
+//         console.log("Also my privateVariable says: " + privateVariable)
+//         // we can access our methods within the constructor!
+//         privateMethod();
+//     }
+// }
+// var joe = new Person("Joe", 23);
+// joe.greet();
 
 
-console.log('**************')
+// console.log('**************')
+
+// // ------------------------------
+
+// var MyObjConstructor = function(name){
+//   var myPrivateVar = "Hello"; // just to show that it is hard to see this private var easily
+//   this.name = name; // but you can see the name!
+//   this.method = function(){
+//     console.log( "I am a method");
+//   };
+// }
+// var obj1 = new MyObjConstructor('object1');
+// var obj2 = new MyObjConstructor('object2');
+// console.log(obj1);
+
+// // ------------------------------
+// console.log('**************')
+
+// class Dot {
+//     constructor(x, y){
+//         this.x = x;
+//         this.y = y;
+//         console.log("You created a Dot!");
+//     }
+// }
+// let dot1 = new Dot(10, 10);
+
+// // ------------------------------
+// console.log('**************')
+
+// var ninja = 'Libby';
+// setTimeout( function (){ console.log(ninja); }, 4000 );
+// console.log(ninja);
+
+// // ------------------------------
+// console.log('**************')
+// console.log("NOW: ");
+// console.log("Declaring and assigning variable 'ninja'.");
+// var ninja = 'Libby';
+// setTimeout( function myCallbackFunction(){
+//   console.log("LATER: ")
+//   console.log(ninja, "LATER"); }, 2000
+// );
+// console.log("Printing ninja value.");
+// console.log(ninja, "NOW");
+
 
 // ------------------------------
+console.log('**************')
 
-var MyObjConstructor = function(name){
-  var myPrivateVar = "Hello"; // just to show that it is hard to see this private var easily
-  this.name = name; // but you can see the name!
-  this.method = function(){
-    console.log( "I am a method");
-  };
+//simulated really slow DB call.
+function getStuffFromDatabase(callback){
+  var data;
+  var myTimer = setTimeout(function(){
+    if (typeof(callback) == 'function'){
+      data = [{name:'Todd'},{name:'Michael'},{name:'Portia'}];
+      callback(data);
+    }
+  }, 10000);
+  return data;
+}    
+// ************CHANGES HERE **************
+function requestDataFromDatabase(){
+  var data = getStuffFromDatabase(function myCallback(data){ // ooh shiny callback!.. when is it invoked???
+    console.log(data, "ASynchronous");
+    for (var i = 0; i < data.length; i ++){
+      console.log(data[i].name);
+    }
+  });
+  console.log(data, "Synchronous");
 }
-var obj1 = new MyObjConstructor('object1');
-var obj2 = new MyObjConstructor('object2');
-console.log(obj1);
+//***************** END CHANGES **********************
+function catchFly(){
+  console.log('I just caught a fly!');
+}
+requestDataFromDatabase();
+// keep running my program!
+console.log('Hello');
+catchFly();
+//etc.
+ 
+
 
 
 </script>
